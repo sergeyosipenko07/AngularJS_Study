@@ -10,8 +10,9 @@
         $ctrl.myName = 'Sergey';
         $ctrl.myHtml = '<span>Sergey</span>'
 
-        $ctrl.incompleteCount = todoService.incompleteCount;
-        $ctrl.warningLevel = todoService.warningLevel;
+        /*$ctrl.incompleteCount = todoService.incompleteCount;
+        $ctrl.warningLevel = todoService.warningLevel;*/
+        Object.assign($ctrl, todoService);
 
         console.log($ctrl.todo);
     }

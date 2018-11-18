@@ -5,10 +5,21 @@
 
     function todoService() {
         return {
+            addNewItem,
             incompleteCount,
             warningLevel
         };
-        
+
+        function addNewItem(items, newItem) {
+            if(newItem && newItem.action) {
+                items.push({
+                    action: newItem.action,
+                    done: false
+                });
+                newItem.action = '';
+            }
+        }
+
         function incompleteCount(items) {
             let count = 0;
 
